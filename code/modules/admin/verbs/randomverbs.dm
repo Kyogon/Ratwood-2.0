@@ -442,7 +442,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		/obj/item/reagent_containers/food/snacks/rogue/frostedcakeslice,
 	)
 	var/cake_type = pick(cake_types)
-	var/obj/item/cake = new cake_type(T)
+	new cake_type(T)
 
 	log_admin("[key_name(usr)] gave a cake slice ([cake_type]) to [key_name(M)].")
 	var/msg = span_adminnotice("[key_name_admin(usr)] gave a cake slice to [ADMIN_LOOKUPFLW(M)].")

@@ -620,7 +620,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 	var/ref_src = "[REF(src)]"
 	// Simplified message to be sent to all admins, including title and a handle button
-	var/admin_msg = span_adminnotice("<span class='adminhelp'>Ticket #[id]: [name] ([initiator_ckey]) - [TicketHref(\"Show Ticket\", ref_src)] [TicketHref(\"Handle\", ref_src, \"handleissue\")]</span>")
+	var/admin_msg = span_adminnotice("<span class='adminhelp'>Ticket #[id]: [name] ([initiator_ckey]) - [TicketHref("Show Ticket", ref_src)] [TicketHref("Handle", ref_src, "handleissue")]</span>")
 
 	AddInteraction("<font color='red'>[LinkedReplyName(ref_src)]: [msg]</font>")
 
