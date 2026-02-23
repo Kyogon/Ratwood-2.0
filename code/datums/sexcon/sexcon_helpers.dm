@@ -196,7 +196,10 @@
 			grabstate = l_grab.grab_state
 	return grabstate
 
-/proc/add_cum_floor(turfu)
+/proc/add_cum_floor(turfu, do_big_puddle = FALSE)
 	if(!turfu || !isturf(turfu))
 		return
-	new /obj/effect/decal/cleanable/coom(turfu)
+	if(do_big_puddle)
+		new /obj/effect/decal/cleanable/coom/big(turfu)
+	else
+		new /obj/effect/decal/cleanable/coom(turfu)
