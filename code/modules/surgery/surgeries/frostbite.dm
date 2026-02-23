@@ -38,8 +38,8 @@
 	surgery_flags = SURGERY_INCISED | SURGERY_RETRACTED
 	surgery_flags_blocked = SURGERY_CONSTRUCT
 
-	skill_min = SKILL_LEVEL_EXPERT
-	skill_median = SKILL_LEVEL_MASTER
+	skill_min = SKILL_LEVEL_JOURNEYMAN
+	skill_median = SKILL_LEVEL_EXPERT
 
 /datum/surgery_step/debride_frostbite/validate_bodypart(mob/user, mob/living/carbon/target, obj/item/bodypart/bodypart, target_zone)
 	. = ..()

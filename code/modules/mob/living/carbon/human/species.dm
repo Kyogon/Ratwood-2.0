@@ -2203,7 +2203,7 @@ GLOBAL_VAR_INIT(cold_breath_overlay, mutable_appearance(
 		H.remove_movespeed_modifier(MOVESPEED_ID_COLD)
 		if(H.bodytemperature >= BODYTEMP_HEAT_LEVEL_ONE_MAX)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, heat_warn)),20 SECONDS,TIMER_UNIQUE)
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, apply_heatstroke)),2 MINUTES ,TIMER_UNIQUE | TIMER_STOPPABLE)
+			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, apply_heatstroke)),3 MINUTES ,TIMER_UNIQUE | TIMER_STOPPABLE)
 
 		else	//level 1 heat
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, heat_warn)),20 SECONDS,TIMER_UNIQUE)
@@ -2216,7 +2216,7 @@ GLOBAL_VAR_INIT(cold_breath_overlay, mutable_appearance(
 			if(prob(15))
 				addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, emote), "shiver"), (rand(2,6)SECONDS),TIMER_UNIQUE | TIMER_STOPPABLE)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, cold_warn)),20 SECONDS,TIMER_UNIQUE)
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, apply_frostbite)),2 MINUTES, TIMER_UNIQUE | TIMER_STOPPABLE)
+			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, apply_frostbite)),3 MINUTES, TIMER_UNIQUE | TIMER_STOPPABLE)
 			H.add_movespeed_modifier(MOVESPEED_ID_COLD, override = TRUE, multiplicative_slowdown = ((BODYTEMP_COLD_LEVEL_ONE_MAX - H.bodytemperature) / 35), blacklisted_movetypes = FLOATING)
 			H.apply_status_effect(/datum/status_effect/debuff/freezing)	//con debuff
 			H.relieve_heatstroke_from_cold()	//if you somehow bypass level 1, straight to level 2, still fix heatstroke
