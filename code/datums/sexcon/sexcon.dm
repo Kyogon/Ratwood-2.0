@@ -385,6 +385,7 @@
 	alert_type = null // don't show an alert on screen
 	tick_interval = 12 SECONDS
 	duration = 30 SECONDS
+	var/contents_to_drip = /datum/reagent/erpjuice/cum
 
 /datum/status_effect/creampie_leak/long
 	id = "creampie_leak_long"
@@ -419,8 +420,15 @@
 /datum/status_effect/creampie_leak/tick()
 	if(!get_location_accessible(owner, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 		return
-	add_cum_floor(get_turf(owner))
+	var/cur_loc = get_turf(owner)
+	if(!cur_loc || !isturf(cur_loc))
+		return
+	add_cum_floor(cur_loc)
 	playsound(owner, pick('sound/misc/bleed (1).ogg', 'sound/misc/bleed (2).ogg', 'sound/misc/bleed (3).ogg'), 20, TRUE, -2, ignore_walls = FALSE)
+	var/obj/item/reagent_containers/glass/cum_chalice = locate() in cur_loc
+	if(!cum_chalice?.spillable) // leak contents underneath the first found open container
+		return
+	cum_chalice.reagents.add_reagent(contents_to_drip,1)
 
 /datum/sex_controller/proc/ejaculate()
 	SEND_SIGNAL(user, COMSIG_MOB_EJACULATED)
