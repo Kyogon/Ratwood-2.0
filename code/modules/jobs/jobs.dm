@@ -85,6 +85,7 @@ GLOBAL_LIST_INIT(courtier_positions, list(
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"City Guard",
+	"Rookie",
 	"Warden",
 	"Sergeant",
 	"Veteran",
