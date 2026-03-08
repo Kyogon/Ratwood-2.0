@@ -18,7 +18,7 @@
 	whitelist_req = TRUE
 
 	outfit = /datum/outfit/job/roguetown/cityguard
-	advclass_cat_rolls = list(CTAG_MENATARMS = 20)
+	advclass_cat_rolls = list(CTAG_WATCH = 20)
 
 	give_bank_account = 22
 	min_pq = 3
@@ -72,7 +72,7 @@
 	thieves, vagrants and troublemakers, confiscating stolen times, and administering swift and orderly justice"
 	outfit = /datum/outfit/job/roguetown/cityguard/watchman
 
-	category_tags = list(CTAG_MENATARMS)
+	category_tags = list(CTAG_WATCH)
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
 		STATKEY_CON = 1,
