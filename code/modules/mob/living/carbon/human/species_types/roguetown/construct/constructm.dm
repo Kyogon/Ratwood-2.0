@@ -160,8 +160,10 @@
 	icon_state = "construct_upgrade"
 	w_class = WEIGHT_CLASS_SMALL
 	smeltresult = /obj/item/ingot/bronze
-	var/self_usable = FALSE ///allow construct to use it on themselves without skill reqs, exclusively used for the black market ver
-	var/in_use = FALSE ///to avoid situations where the dialog box is open but you click the golem again with it
+	///allow construct to use it on themselves without skill reqs, exclusively used for the black market ver
+	var/self_usable = FALSE
+	///to avoid situations where the dialog box is open but you click the golem again with it
+	var/in_use = FALSE 
 
 /obj/item/construct_skill_core/blackmarket
 	name = "modified construct skill exhibitor"
