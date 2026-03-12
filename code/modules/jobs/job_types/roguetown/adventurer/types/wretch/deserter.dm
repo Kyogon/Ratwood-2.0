@@ -10,6 +10,7 @@
 	maximum_possible_slots = 2 //Ideal role for fraggers. Better to limit it.
 
 	cmode_music = 'sound/music/cmode/antag/combat_thewall.ogg' // same as new hedgeknight music
+	class_select_category = CLASS_CAT_WARRIOR
 	// Deserter are the knight-equivalence. They get a balanced, straightforward 2 2 3 statspread to endure and overcome.
 	subclass_stats = list(
 		STATKEY_WIL = 3,
@@ -140,8 +141,8 @@
 	name = "Fighter"
 	tutorial = "It matters not what cause you swing your weapon for, in the end you fight the same way your ancestors and their ancestors did: clad in metal and intimately intertwined with gore and death."
 	outfit = /datum/outfit/job/roguetown/wretch/desertermaa
-
 	cmode_music = 'sound/music/combat_vigilante.ogg' //Unused by any other class, so may as very well...
+  class_select_category = CLASS_CAT_WARRIOR
 	// Slightly more rounded. These can be nudged as needed.
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
