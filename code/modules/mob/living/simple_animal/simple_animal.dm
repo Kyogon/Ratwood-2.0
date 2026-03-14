@@ -422,10 +422,26 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					butcher(user, on_meathook)
 
 	else if (stat != DEAD && istype(ssaddle, /obj/item/natural/saddle))		//Fallback saftey for saddles
-		var/datum/component/storage/saddle_storage = ssaddle.GetComponent(/datum/component/storage)
-		var/access_time = (user in buckled_mobs) ? 10 : 30
-		if (do_after(user, access_time, target = src))
-			saddle_storage.show_to(user)
+		var/list/modifiers = params2list(params)
+		var/is_shift_middle = modifiers["shift"] || user?.client?.keys_held["Shift"]
+		if(is_shift_middle)
+			if(has_buckled_mobs())
+				to_chat(user, span_warning("I can't remove [src]'s saddle while someone is mounted."))
+				return
+			user.visible_message(span_notice("[user] starts undoing [src]'s saddle."), span_notice("I start undoing [src]'s saddle."))
+			if(do_after(user, 30, target = src))
+				var/obj/item/natural/saddle/saddle_item = ssaddle
+				ssaddle = null
+				saddle_item.forceMove(get_turf(src))
+				user.put_in_hands(saddle_item)
+				playsound(src, 'sound/foley/saddledismount.ogg', 100, TRUE)
+				user.visible_message(span_notice("[user] removes [src]'s saddle."), span_notice("I remove [src]'s saddle."))
+				update_icon()
+		else
+			var/datum/component/storage/saddle_storage = ssaddle.GetComponent(/datum/component/storage)
+			var/access_time = (user in buckled_mobs) ? 10 : 30
+			if (do_after(user, access_time, target = src))
+				saddle_storage.show_to(user)
 	..()
 
 /mob/living/simple_animal/proc/butcher(mob/living/user, on_meathook = FALSE)
