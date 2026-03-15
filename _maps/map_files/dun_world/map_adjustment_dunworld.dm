@@ -10,6 +10,8 @@
 	blacklist = list(
 		/datum/job/roguetown/vanguard,
 		/datum/job/roguetown/guardsman,
+		/datum/job/roguetown/watchcaptain,
+		/datum/job/roguetown/wardenmaster,
 		/datum/job/roguetown/rookie
 	)
 	slot_adjust = list(

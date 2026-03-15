@@ -314,7 +314,7 @@
 /obj/effect/proc_holder/spell/invoked/order/hold/cast(list/targets, mob/living/user)
 	. = ..()
 	if(isliving(targets[1]))
-		var/mob/living/target = targets[1]
+		var/mob/living/target = targets[1]//someone remind me to make version for desertmap classes
 		var/msg = user.mind.holdtext
 		if(!msg)
 			to_chat(user, span_alert("I must say something to give an order!"))
@@ -326,6 +326,16 @@
 				return
 		if(user.job == "Knight Captain")
 			if(!(target.job in list("Knight", "Squire")))
+				to_chat(user, span_alert("I cannot order one not of my ranks!"))
+				revert_cast()
+				return
+		if(user.job == "Watch Captain")
+			if(!(target.job in list("City Guard", "Rookie", "Watchman")))
+				to_chat(user, span_alert("I cannot order one not of my ranks!"))
+				revert_cast()
+				return
+		if(user.job == "Master Warden")
+			if(!(target.job in list("Warden", "Vanguard")))
 				to_chat(user, span_alert("I cannot order one not of my ranks!"))
 				revert_cast()
 				return
