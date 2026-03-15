@@ -586,7 +586,12 @@
 			owner.heal_wounds(healing_on_tick)
 			owner.update_damage_overlays()
 		if(HAS_TRAIT(owner, TRAIT_SIMPLE_WOUNDS))
-			owner.simple_bleeding = max(0, owner.simple_bleeding-(healing_on_tick/2))
+			if(wCount.len > 0)
+				owner.heal_wounds(healing_on_tick * 2)
+			owner.bleed_rate = owner.get_bleed_rate()
+			if(!length(owner.get_wounds()) && !length(owner.get_embedded_objects()))
+				owner.simple_bleeding = 0
+				owner.bleed_rate = 0
 		owner.adjustBruteLoss(-healing_on_tick, 0)
 		owner.adjustFireLoss(-healing_on_tick, 0)
 		owner.adjustOxyLoss(-healing_on_tick, 0)
@@ -670,6 +675,9 @@
 		if(wCount.len > 0)
 			owner.heal_wounds(healing_on_tick)
 			owner.update_damage_overlays()
+		if(HAS_TRAIT(owner, TRAIT_SIMPLE_WOUNDS) && !length(owner.get_wounds()) && !length(owner.get_embedded_objects()))
+			owner.simple_bleeding = 0
+			owner.bleed_rate = 0
 		owner.adjustBruteLoss(-healing_on_tick, 0)
 		owner.adjustFireLoss(-healing_on_tick, 0)
 		owner.adjustOxyLoss(-healing_on_tick * 0.5, 0)
@@ -806,6 +814,13 @@
 			owner.update_damage_overlays()
 		owner.adjustOxyLoss(-healing_on_tick, 0)
 		owner.adjustToxLoss(-healing_on_tick, 0)
+		if(HAS_TRAIT(owner, TRAIT_SIMPLE_WOUNDS))
+			if(wCount.len > 0)
+				owner.heal_wounds(healing_on_tick * 2)
+			owner.bleed_rate = owner.get_bleed_rate()
+			if(!length(owner.get_wounds()) && !length(owner.get_embedded_objects()))
+				owner.simple_bleeding = 0
+				owner.bleed_rate = 0
 		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
 		owner.adjustCloneLoss(-healing_on_tick, 0)
 

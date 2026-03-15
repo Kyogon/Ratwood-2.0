@@ -289,7 +289,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		move_to_delay = initial(move_to_delay)
 		return
 	var/health_deficiency = getBruteLoss() + getFireLoss()
-	if(health_deficiency >= ( maxHealth - (maxHealth*0.50) ))
+	if(health <= round(maxHealth * 0.5) || health_deficiency >= round(maxHealth * 0.5))
 		move_to_delay = initial(move_to_delay) + 2
 	else
 		move_to_delay = initial(move_to_delay)
@@ -889,9 +889,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(tame && riding_datum)
 		if(riding_datum.handle_ride(user, direction))
-			riding_datum.vehicle_move_delay = move_to_delay
+			var/new_delay = move_to_delay
 			if(user.m_intent == MOVE_INTENT_RUN)
-				riding_datum.vehicle_move_delay -= 1
+				new_delay -= 1
 				if(loc != oldloc)
 					var/turf/open/T = loc
 					if(!do_footstep && T.footstep)
@@ -910,9 +910,13 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			if(user.mind)
 				var/amt = user.get_skill_level(/datum/skill/misc/riding)
 				if(amt)
-					riding_datum.vehicle_move_delay -= 5 + amt/6
+					new_delay -= 5 + amt/6
 				else
-					riding_datum.vehicle_move_delay -= 3
+					new_delay -= 3
+			var/health_deficiency = getBruteLoss() + getFireLoss()
+			if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN) && (health <= round(maxHealth * 0.5) || health_deficiency >= round(maxHealth * 0.5)))
+				new_delay = max(new_delay, initial(move_to_delay) + 2)
+			riding_datum.vehicle_move_delay = max(1, new_delay)
 			if(loc != oldloc)
 				var/obj/structure/mineral_door/MD = locate() in loc
 				if(MD && !MD.ridethrough)
