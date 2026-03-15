@@ -2090,3 +2090,31 @@
 		var/list/things = STR.contents()
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
+
+/obj/item/clothing/cloak/citywatchcaptain
+	name = "citywatch captain's cloak"
+	desc = "A most handsome cloak, denoting a certain superlative cosmipolitan authority"
+	color = null
+	icon_state = "shortcloak"
+	item_state = "shortcloak"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	boobed = TRUE
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = TRUE
+	detail_tag = "_detail"
+	detail_color = CLOTHING_BLACK
+
+/obj/item/clothing/cloak/citywatchcaptain/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete/roguetown/cloak)
+
+/obj/item/clothing/cloak/citywatchcaptain/dropped(mob/living/carbon/human/user)
+	..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		var/list/things = STR.contents()
+		for(var/obj/item/I in things)
+			STR.remove_from_storage(I, get_turf(src))

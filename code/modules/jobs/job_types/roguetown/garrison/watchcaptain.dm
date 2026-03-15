@@ -7,9 +7,9 @@
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = ACCEPTED_RACES
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)//I like the idea of making it set you to middle aged, but having the requirement removes it from the latejoin menu which I think is bad for visibility
 	tutorial = "You are the most experienced of the City Watch, leading the city watchmen in maintaining order in hightown and attending to threats and crimes below the keep's attention. \
-				See to those brave city watchmen under your command and fill in the gaps knights leave in their wake. Obey the orders of the Knight-Captain and the Crown."
+				See to those brave city watchmen under your command and fill in the gaps the ducal retinue leave in their wake. Obey the orders of the marshal and the Crown."
 	display_order = JDO_SHERIFF
 	whitelist_req = TRUE
 	round_contrib_points = 3
@@ -21,7 +21,7 @@
 	give_bank_account = 50
 	min_pq = 6
 	max_pq = null
-	cmode_music = 'sound/music/combat_ManAtArms.ogg'
+	cmode_music = 'sound/music/combat_citywatch.ogg'
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR)
 	job_subclasses = list(
 		/datum/advclass/watchcaptain/watchcaptain
@@ -33,7 +33,7 @@
 /datum/outfit/job/roguetown/watchcaptain
 	head = /obj/item/clothing/head/roguetown/helmet/citywatch
 	neck = /obj/item/clothing/neck/roguetown/bevor
-	cloak = /obj/item/clothing/cloak/citywatch
+	cloak = /obj/item/clothing/cloak/citywatchcaptain
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/citywatch
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	belt = /obj/item/storage/belt/rogue/leather
@@ -52,7 +52,7 @@
 
 	category_tags = list(CTAG_SHERIFF)
 	subclass_stats = list(
-		STATKEY_STR = 1,
+		STATKEY_STR = 1,//will people accept a combat roll with less than +2 in strength? Who knows
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
 		STATKEY_PER = 3, //eye for Crime

@@ -7,7 +7,7 @@
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = ACCEPTED_RACES
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)//I like the idea of making it set you to middle aged, but having the requirement removes it from the latejoin menu which I think is bad for visibility
 	tutorial = "You are the most experienced of the Crown's Soldiery, leading the Wardens in maintaining order and attending to threats and crimes below the court's attention. \
 				See to those under your command and fill in the gaps knights leave in their wake. Obey the orders of your Marshal and the Crown."
 	display_order = JDO_BOGMASTER
@@ -21,7 +21,7 @@
 	give_bank_account = 50
 	min_pq = 6
 	max_pq = null
-	cmode_music = 'sound/music/combat_blackoak.ogg'
+	cmode_music = 'sound/music/combat_hornofthebeast.ogg'
 	job_traits = list(TRAIT_OUTDOORSMAN, TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR, TRAIT_WOODSMAN, TRAIT_SURVIVAL_EXPERT, TRAIT_FUSILIER)
 	job_subclasses = list(
 		/datum/advclass/wardenmaster/wardenmaster

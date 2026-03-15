@@ -24,7 +24,7 @@
 	tutorial_adjust = list(
 		/datum/job/roguetown/captain = "Your lineage is noble, and generations of strong, loyal knights have come before you. You served your time \
 				gracefully as knight of his royal majesty, and now you've grown into a role which many men can only dream of becoming. \
-				Veteran among knights, you lead the crown's knights to battle, organize the training squires, and order the loyal men at arms. Obey only the Crown. \
+				Veteran among knights, you lead the crown's knights to battle, organize the training squires, and order the loyal men at arms. Obey only the Marshal and Crown. \
 				Lead your men to victory--and keep them in line--and you will see this realm prosper under a thousand suns.",
 		/datum/job/roguetown/physician = "You are a master physician, trusted by the Duke themself to administer expert care to the Royal family, the court, \
 			its protectors and its subjects. While primarily a resident of the keep in the manors medical wing, you also have access \
@@ -37,7 +37,8 @@
 		/datum/job/roguetown/manorguard = "Having proven yourself loyal and capable, you are entrusted to defend the keep and enforce its will throughout the duchy. \
 				Trained regularly in combat and siege warfare, you deal with threats - both within and without. \
 				Obey your Marshal, Knight-captain and the Crown. Show the nobles and knights your respect, so that you may earn it in turn. Not as a commoner, but as a soldier..",
-		/datum/job/roguetown/marshal = "CHANGE ME NOW!"
+		/datum/job/roguetown/marshal = "You are an agent of the crown in matters of law and military, making sure that laws are pushed, verified and carried out by the retinue upon the citizenry of the realm. \
+				As the ultimate authority on all things military, much of your work happens behind a desk, deferring duties between the Knight Captain, Watch Captain and Master Warden and acting as the primary go-between to make sure your will - and of course, the Duke's, is carried out in the field.",
 	)
 	// species_adjust = list()
 	// sexes_adjust = list()
