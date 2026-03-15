@@ -65,7 +65,7 @@
 		/datum/skill/combat/crossbows = 2,
 		/datum/skill/combat/wrestling = 2,
 		/datum/skill/combat/unarmed = 2,
-		/datum/skill/combat/knives = 1,
+		/datum/skill/combat/knives = 2,
 		/datum/skill/misc/swimming = 2,
 		/datum/skill/misc/climbing = 3,
 		/datum/skill/misc/athletics = 3,
@@ -127,7 +127,7 @@
 		/datum/skill/combat/unarmed = 1,
 		/datum/skill/combat/swords = 2,
 		/datum/skill/combat/maces = 2,//clobbering criminals
-		/datum/skill/combat/knives = 3,
+		/datum/skill/combat/knives = 2,
 		/datum/skill/misc/swimming = 2,
 		/datum/skill/misc/climbing = 4,
 		/datum/skill/misc/athletics = 3,
