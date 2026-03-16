@@ -38,7 +38,7 @@ SUBSYSTEM_DEF(treasury)
 		TAX_CAT_CHURCH = list("taxAmount" = 6, "fineExemption" = TRUE),
 		TAX_CAT_YEOMEN = list("taxAmount" = 12, "fineExemption" = FALSE),
 		TAX_CAT_PEASANTS = list("taxAmount" = 12, "fineExemption" = FALSE),
-		TAX_CAT_OUTLANDER = list("taxAmount" = 40, "fineExemption" = FALSE)
+		TAX_CAT_OUTLANDER = list("taxAmount" = 25, "fineExemption" = FALSE)
 	)
 	var/tax_value = 0.11
 	var/queens_tax = 0.10
