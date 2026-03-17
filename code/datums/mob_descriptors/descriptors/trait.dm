@@ -160,6 +160,10 @@
 	name = "Cervine"
 	prefix = "is very"
 
+/datum/mob_descriptor/trait/ursine
+	name = "Ursine"
+	prefix = "is very"
+
 /datum/mob_descriptor/trait/stern
 	name = "Stern"
 	prefix = "is very"

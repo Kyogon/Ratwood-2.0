@@ -372,6 +372,9 @@
 		else
 			return "hunter"
 
+/datum/mob_descriptor/stature/bear
+	name = "Bear"
+
 /datum/mob_descriptor/stature/ruffian
 	name = "Ruffian/Broad"
 
