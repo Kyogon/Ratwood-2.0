@@ -118,9 +118,8 @@
 	HAPPINESS MUST BE FOUGHT FOR.'"
 	armor = list("blunt" = 30, "slash" = 50, "stab" = 50, "piercing" = 20, "fire" = 0, "acid" = 0) //Custom value; padded gambeson's slash- and stab- armor.
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	repair_time = 20 SECONDS
 	max_integrity = 300
-
-	repair_time = 20
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/weak
 	name = "tough skin"
@@ -129,7 +128,6 @@
 	max_integrity = 300
 	body_parts_covered = FULL_BODY
 	body_parts_inherent = FULL_BODY
-
 	interrupt_damount = 1
 
 #undef COMBAT_TAG_DURATION
