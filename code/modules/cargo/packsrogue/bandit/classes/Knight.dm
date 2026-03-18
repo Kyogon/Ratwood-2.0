@@ -313,7 +313,6 @@
 	cost = 60
 	contains = list(/obj/item/rogueweapon/greataxe/silver)
 
-
 /////////////
 // SHIELDS //
 /////////////
