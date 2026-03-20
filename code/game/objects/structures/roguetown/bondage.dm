@@ -144,13 +144,10 @@
 	M.plane = initial(M.plane)
 
 /obj/structure/bondage/gloryhole/attack_right(mob/living/user)
-	if(!ishuman(user) || !(user.mobility_flags & MOBILITY_STAND)) // must be standing
-		return ..()
-
-	var/can_buckle_old = can_buckle
-	can_buckle = 0
 	. = ..()
-	can_buckle = can_buckle_old
+	if(!ishuman(user) || !(user.mobility_flags & MOBILITY_STAND)) // must be standing
+		return
+
 	if(.)
 		return
 	var/adir = get_dir(loc, user)
