@@ -1,5 +1,6 @@
 #define SUPPORT_BEAM_DISTANCE_CHECK 7 // passive check for any surrounding support beams
 #define SUPPORT_BEAM_ACTIVE_COLLAPSE_CHECK 3 // when there is a active collapse, lower the distance check for support beams
+#define MINESHAFT_FLOOR_TYPE /turf/open/floor/rogue/naturalstone // why? its so if players were to mine out their den and replace the floor with carpet/twigs/etc, they will be immune to cave-in
 
 GLOBAL_VAR_INIT(mine_collapse_active, 0)
 
@@ -45,7 +46,7 @@ GLOBAL_VAR_INIT(mine_collapse_active, 0)
 	if(!prob(4))
 		return
 	var/turf/T = get_turf(src)
-	if(!T || !istype(T, /turf/open/floor/rogue/naturalstone))
+	if(!T || !istype(T, MINESHAFT_FLOOR_TYPE))
 		return
 	if(found_near_support_beam(SUPPORT_BEAM_DISTANCE_CHECK))
 		return
@@ -78,7 +79,7 @@ GLOBAL_VAR_INIT(mine_collapse_active, 0)
 
 /obj/structure/mine_collapse/proc/trigger_collapse(triggered_by_neighbor = FALSE, do_sfx = TRUE)
 	var/turf/T = get_turf(src)
-	if(!T || !istype(T, /turf/open/floor/rogue/naturalstone))
+	if(!T || !istype(T, MINESHAFT_FLOOR_TYPE))
 		return FALSE
 	rolling_rocks = TRUE
 	last_trigger = world.time
@@ -102,7 +103,7 @@ GLOBAL_VAR_INIT(mine_collapse_active, 0)
 	rolling_rocks = FALSE
 	GLOB.mine_collapse_active--
 	var/turf/T = get_turf(src)
-	if(!T || !istype(T, /turf/open/floor/rogue/naturalstone))
+	if(!T || !istype(T, MINESHAFT_FLOOR_TYPE))
 		return
 
 	if(found_near_support_beam(0)) // they managed to put up a support beam in time, abort
@@ -140,10 +141,13 @@ GLOBAL_VAR_INIT(mine_collapse_active, 0)
 	playsound(src, 'sound/misc/meteorimpact.ogg', 200, TRUE)
 	if(!triggered_by_neighbor)
 		X.loud_message("The ground shakes, and falling rocks echo", hearing_distance = 14)
+
 	if(GLOB.mine_collapse_active > 7)
 		return
+	if(!triggered_by_neighbor && prob(25)) // 25% of not cascading
+		return
 	var/trigger_sfx = TRUE
-	for(var/obj/structure/mine_collapse/other_mineshafts in range(2, src))
+	for(var/obj/structure/mine_collapse/other_mineshafts in range(1, src))
 		if(src == other_mineshafts)
 			continue
 		if(other_mineshafts.rolling_rocks)
@@ -172,3 +176,4 @@ GLOBAL_VAR_INIT(mine_collapse_active, 0)
 
 #undef SUPPORT_BEAM_DISTANCE_CHECK
 #undef SUPPORT_BEAM_ACTIVE_COLLAPSE_CHECK
+#undef MINESHAFT_FLOOR_TYPE
