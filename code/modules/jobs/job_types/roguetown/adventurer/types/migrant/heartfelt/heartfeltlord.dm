@@ -79,7 +79,7 @@
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/storage/belt/pouch/coins/veryrich = 2,
+		/obj/item/storage/belt/rogue/pouch/coins/veryrich = 2,
 		/obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew = 2,
 		/obj/item/natural/feather = 1,
 		/obj/item/paper = 1,
@@ -142,7 +142,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	cloak = /obj/item/clothing/cloak/heartfelt
 	armor = /obj/item/clothing/cloak/black_cloak
-	neck = /obj/item/storage/belt/pouch/coins/veryrich
+	neck = /obj/item/storage/belt/rogue/pouch/coins/veryrich
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	r_hand = /obj/item/rogueweapon/woodstaff/diamond
 	beltr = /obj/item/rogueweapon/huntingknife
