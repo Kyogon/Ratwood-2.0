@@ -24,7 +24,7 @@
 	min_pq = 6
 	max_pq = null
 	cmode_music = 'sound/music/combat_hornofthebeast.ogg'
-	job_traits = list(TRAIT_OUTDOORSMAN, TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR, TRAIT_WOODSMAN, TRAIT_SURVIVAL_EXPERT, TRAIT_FUSILIER)
+	job_traits = list(TRAIT_OUTDOORSMAN, TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT, TRAIT_WOODSMAN, TRAIT_SURVIVAL_EXPERT, TRAIT_FUSILIER)
 	job_subclasses = list(
 		/datum/advclass/wardenmaster/wardenmaster
 	)
@@ -132,11 +132,9 @@
 			if("Light Armor")
 				shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 				pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-				ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			if("Medium Armor")
 				shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 				pants = /obj/item/clothing/under/roguetown/chainlegs
-				ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 /obj/effect/proc_holder/spell/self/convertrole/vanguard
 	name = "Recruit Vanguard"
