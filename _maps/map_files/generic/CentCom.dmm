@@ -2848,6 +2848,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cave/inhumen/wretch/camp)
+"lW" = (
+/obj/structure/stairs/stone{
+	dir = 8
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/dietroyt)
 "lY" = (
 /obj/structure/fluff/statue/knight/r,
 /turf/closed/wall/mineral/rogue/stone,
@@ -5774,6 +5780,13 @@
 /obj/item/natural/stone,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/bograt/safe)
+"Am" = (
+/obj/structure/fluff/traveltile/dungeoneer{
+	aportalgoesto = "siberia2b";
+	aportalid = "siberia1b"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/dietroyt)
 "Ao" = (
 /obj/structure/chair/freedomchair,
 /turf/open/floor/rogue/concrete,
@@ -6716,7 +6729,9 @@
 	},
 /area/rogue/indoors/banditcamp)
 "EJ" = (
-/turf/closed/wall/mineral/rogue/stone/window/unbreakable,
+/turf/closed/wall/mineral/rogue/stone/window/unbreakable{
+	icon_state = "stonewindow"
+	},
 /area/rogue/indoors/ravoxarena)
 "EL" = (
 /obj/structure/bed/rogue/shit,
@@ -8054,7 +8069,9 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/dietroyt)
 "LD" = (
-/turf/closed/wall/mineral/rogue/stone/window/unbreakable,
+/turf/closed/wall/mineral/rogue/stone/window/unbreakable{
+	icon_state = "stonewindow"
+	},
 /area/rogue/dietroyt)
 "LE" = (
 /obj/structure/table/wood{
@@ -16960,10 +16977,10 @@ rQ
 "}
 (47,1,1) = {"
 qB
+Qt
 uZ
 uZ
-uZ
-uZ
+Qt
 uZ
 uZ
 uZ
