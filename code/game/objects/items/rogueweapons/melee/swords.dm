@@ -744,10 +744,10 @@
 /obj/item/rogueweapon/sword/long/oldpsysword
 	name = "enduring longsword"
 	desc = "A steel longsword with an angled crossguard. The lesser clerics of the Psydonic Orders oft-carry these blades, and - though it may not carry the bite of silver - it still humbles men and monsters alike with a well-poised strike."
-	force = 20
-	force_wielded = 25
 	icon_state = "opsysword"
 	sheathe_icon = "opsysword"
+	force = 20
+	force_wielded = 25
 	dropshrink = 1
 
 /obj/item/rogueweapon/sword/long/psysword
