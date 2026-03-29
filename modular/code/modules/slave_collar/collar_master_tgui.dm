@@ -106,9 +106,14 @@
 		pet_entry["clothing_forbidden"] = HAS_TRAIT_FROM(pet, TRAIT_NUDIST, COLLAR_TRAIT)
 		pet_entry["forced_love"] = pet.has_status_effect(/datum/status_effect/in_love)
 		var/obj/item/clothing/neck/roguetown/cursed_collar/collar = pet.get_item_by_slot(SLOT_NECK)
-		pet_entry["received_cum_count"] = istype(collar) ? collar.received_cum_count : null
-
 		var/obj/item/chastity/device = CM.get_pet_cursed_chastity(pet)
+		if(istype(collar))
+			pet_entry["received_cum_count"] = collar.received_cum_count
+		else if(device)
+			pet_entry["received_cum_count"] = device.received_cum_count
+		else
+			pet_entry["received_cum_count"] = null
+
 		pet_entry["has_cursed_chastity"] = !!device
 		pet_entry["has_penis"] = !!pet.getorganslot(ORGAN_SLOT_PENIS)
 		pet_entry["has_vagina"] = !!pet.getorganslot(ORGAN_SLOT_VAGINA)

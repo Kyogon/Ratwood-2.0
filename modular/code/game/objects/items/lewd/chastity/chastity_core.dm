@@ -50,6 +50,8 @@ GLOBAL_LIST_INIT(chastity_standard_traits, list(
 	var/chastity_cursed = FALSE // if the device works like a cursed collar
 	var/mob/living/carbon/human/chastity_victim = null // variable for anyone currently caged
 	var/datum/mind/chastity_master = null // varient of the collar master variable but for specifically cages
+	/// Round-persistent counter for non-self ejaculation events received by the current cursed wearer.
+	var/received_cum_count = 0
 	var/obj/item/dildo/attached_toy = null // dildo mounted directly onto this chastity device
 	lockid = null
 	lockhash = null
@@ -74,6 +76,11 @@ GLOBAL_LIST_INIT(chastity_standard_traits, list(
 	. = ..()
 	if(attached_toy)
 		. += "[span_notice("\An [attached_toy] appears attached to \the [initial(name)]. Alt+RMB to remove it.")]"
+	if(chastity_cursed)
+		if(received_cum_count == 1)
+			. += span_notice("1 tally mark is etched into the chastity device's metal surface.")
+		else if(received_cum_count > 1)
+			. += span_notice("[received_cum_count] tally marks are etched into the chastity device's metal surface.")
 
 /obj/item/chastity/attackby(obj/item/I, mob/user, params)
 	if(!istype(I, /obj/item/dildo))

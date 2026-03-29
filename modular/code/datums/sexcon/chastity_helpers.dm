@@ -235,7 +235,7 @@
 		return TRUE
 	return FALSE
 
-/// Records a non-self received ejaculation event on a receiver's cursed collar, if present.
+/// Records a non-self received ejaculation event on a receiver's cursed control item (collar or chastity), if present.
 /datum/sex_controller/proc/modular_record_collar_receive_event(mob/living/carbon/human/receiver, mob/living/carbon/human/source)
 	if(!receiver || !source)
 		return FALSE
@@ -243,7 +243,14 @@
 		return FALSE
 
 	var/obj/item/clothing/neck/roguetown/cursed_collar/collar = receiver.get_item_by_slot(SLOT_NECK)
-	if(!istype(collar))
+	var/obj/item/chastity/chastity = receiver.chastity_device
+	if(istype(collar) && istype(chastity) && chastity.chastity_cursed)
 		return FALSE
 
-	return collar.record_nonself_ejaculation(source, receiver)
+	if(istype(collar))
+		return collar.record_nonself_ejaculation(source, receiver)
+
+	if(!istype(chastity) || !chastity.chastity_cursed)
+		return FALSE
+
+	return chastity.record_nonself_ejaculation(source, receiver)
