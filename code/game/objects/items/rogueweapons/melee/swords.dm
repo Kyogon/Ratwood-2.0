@@ -747,6 +747,8 @@
 	desc = "A steel longsword with an angled crossguard. The lesser clerics of the Psydonic Orders oft-carry these blades, and - though it may not carry the bite of silver - it still humbles men and monsters alike with a well-poised strike."
 	icon_state = "opsysword"
 	sheathe_icon = "opsysword"
+	force = 20
+	force_wielded = 25
 	dropshrink = 1
 
 /obj/item/rogueweapon/sword/long/psysword
@@ -754,8 +756,8 @@
 	desc = "A finely made longsword, plated in a ceremonial veneer of ornate silver - made for felling men and monsters alike. </br>'Psydon will deliver those who were mindful of Him to their place of ultimate triumph. No evil will touch them, nor will they grieve.'"
 	icon_state = "psysword"
 	sheathe_icon = "psysword"
-	force = 20
-	force_wielded = 25
+	force = 25
+	force_wielded = 30
 	minstr = 9
 	wdefense = 6
 	dropshrink = 1
@@ -1345,8 +1347,8 @@
 	sheathe_icon = "rapier"
 	max_integrity = 225
 	max_blade_int = 225
-	force = 20
-	force_wielded = 20
+	force = 22
+	force_wielded = 22
 	minstr = 8
 	wdefense = 8
 	smeltresult = /obj/item/ingot/silverblessed
@@ -1370,8 +1372,8 @@
 	sheathe_icon = "psyrapier"
 	max_integrity = 300
 	max_blade_int = 300
-	force = 20
-	force_wielded = 20
+	force = 22
+	force_wielded = 22
 	minstr = 8
 	wdefense = 8
 	smeltresult = /obj/item/ingot/silver
